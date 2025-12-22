@@ -32,8 +32,8 @@ A clean, responsive, and customizable Linktree-style profile card built with HTM
 		<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="32" style="vertical-align:middle; margin-right:8px;"/>
 	</a>
 </p>
-
 Dr. Nidhi Singh is dedicated to women’s wellness, health, and beauty. She inspires women to heal from within as a Gynae, Homeopath, and Wellness Educator.
 
 👉 **Follow Dr. Nidhi Singh on [YouTube](https://www.youtube.com/@the_doctor_sahiba) and [Instagram](https://www.instagram.com/the_doctor_sahiba/) for more tips, inspiration, and updates!**
+
 
