@@ -1,12 +1,27 @@
-
-
-
 # Link-in-bio Profile Card
 
-This project is a simple, responsive, and customizable profile card web page inspired by Linktree. Built with HTML, CSS, and JavaScript, it allows you to showcase your profile, bio, and social links in a clean, modern design. The page includes a theme toggle for multiple background styles and is easy to personalize for your own use.
+A clean, responsive, and customizable Linktree-style profile card built with HTML, CSS, and JavaScript.
+
+## ✨ Features
+
+- Modern, mobile-friendly design
+- Theme toggle with multiple gradients
+- Local assets (no external image dependencies)
+- Easy to customize handle, bio, and social links
+- WhatsApp and YouTube links included by default
 
 ---
 
+## 🚀 Quick Start
+
+1. **Open `index.html` directly in your browser**
+	 - Or serve locally for best results:
+		 ```bash
+		 python -m http.server 8080
+		 # Then open http://localhost:8080
+		 ```
+
+---
 ## About Dr. Nidhi Singh
 
 <p align="center">
@@ -21,3 +36,4 @@ This project is a simple, responsive, and customizable profile card web page ins
 Dr. Nidhi Singh is dedicated to women’s wellness, health, and beauty. She inspires women to heal from within as a Gynae, Homeopath, and Wellness Educator.
 
 👉 **Follow Dr. Nidhi Singh on [YouTube](https://www.youtube.com/@the_doctor_sahiba) and [Instagram](https://www.instagram.com/the_doctor_sahiba/) for more tips, inspiration, and updates!**
+
