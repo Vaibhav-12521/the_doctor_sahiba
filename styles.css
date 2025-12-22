@@ -1,0 +1,169 @@
+:root{
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --shadow: 0 10px 30px rgba(15,23,42,0.08);
+  --ring: 0 0 0 6px rgba(59,130,246,0.15);
+  --accent: #111827;
+  --cta-bg: #f3f4f6;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+}
+.page{
+  min-height:100dvh;
+  display:grid;
+  place-items:center;
+  padding:24px 0 40px 0;
+}
+.card{
+  position:relative;
+  width:min(340px, 96vw);
+  background:var(--card-bg);
+  border-radius:20px;
+  box-shadow:var(--shadow);
+  padding:0 18px;
+  overflow:hidden;
+}
+.cover-image{
+  position:relative;
+  width:100%;
+  height:26%;
+  min-height:100px;
+  overflow:hidden;
+}
+.cover-image::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:60%;
+  background:linear-gradient(to bottom, transparent, rgba(255,255,255,2.95));
+  pointer-events:none;
+}
+.cover-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.card::after{
+  content:"";
+  position:absolute; inset:0;
+  border-radius:24px; pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(15,23,42,0.06);
+}
+.card-corner{
+  position:absolute; left:14px; top:10px;
+  z-index:10;
+  user-select:none;
+}
+.card-corner button {
+  background:rgba(255,255,255,0.7);
+  border:none;
+  border-radius:50%;
+  width:32px;
+  height:32px;
+  min-width:32px;
+  min-height:32px;
+  max-width:32px;
+  max-height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
+  backdrop-filter: blur(2px);
+  aspect-ratio: 1/1;
+  padding: 0;
+  outline: none;
+}
+.card-corner button:hover {
+  background:rgba(255,255,255,0.95);
+  box-shadow:0 4px 16px rgba(0,0,0,0.13);
+  transform: scale(1.08) rotate(-8deg);
+}
+/* Dedicated style for the theme toggle button to ensure perfect circle and center icon */
+#themeToggle {
+  border-radius: 50% !important;
+  width: 29px !important;
+  height: 29px !important;
+  min-width: 29px !important;
+  min-height: 29px !important;
+  max-width: 29px !important;
+  max-height: 29px !important;
+  aspect-ratio: 1/1 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 22px;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
+}
+#themeToggle:hover {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  transform: scale(1.0) rotate(-8deg);
+}
+.card-corner #themeIcon {
+  pointer-events:none;
+}
+.profile{ text-align:center; padding:18px 0 0; margin-top:-25%; position:relative; z-index:5; }
+.handle{ font-size:22px; margin:4px 0 10px; }
+.bio{
+  margin:0 auto; line-height:1.5; color:var(--muted);
+  font-size:14px; max-width:280px;
+}
+.socials{
+  display:flex; flex-direction:column; gap:10px;
+  margin:14px auto 4px; max-width:320px;
+  padding:0;
+}
+.social-link{
+  display:flex; align-items:center; gap:12px;
+  padding:12px 18px; border-radius:12px;
+  color:#111827; background:#f3f4f6; 
+  text-decoration:none; font-weight:500; font-size:15px;
+  box-shadow:inset 0 0 0 1px rgba(15,23,42,0.06);
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.social-link.whatsapp {
+  color: #1bd741;
+}
+.social-link.whatsapp svg {
+  color: #1bd741;
+  fill: #1bd741;
+}
+.social-link.youtube {
+  color: #ea3323;
+}
+.social-link.youtube svg {
+  color: #ea3323;
+  fill: #ea3323;
+}
+.social-link:hover{ transform:translateX(2px); background:#eef2ff; }
+.social-link:active{ box-shadow:var(--ring); }
+
+.footer{
+  margin:14px 0 0; padding:0 0 10px; display:flex; gap:8px; justify-content:center; align-items:center;
+  color:var(--muted); font-size:12px;
+}
+.foot-link{ color:inherit; text-underline-offset:3px; }
+.foot-link:hover{ color:#111827; }
+
+@media (max-width:360px){
+  .cover-image{ min-height:160px; }
+}
