@@ -23,17 +23,29 @@ A clean, responsive, and customizable Linktree-style profile card built with HTM
 
 ---
 ## About Dr. Nidhi Singh
+## 🔗 Connect with me 
 
 <p align="center">
-	<a href="https://www.youtube.com/@the_doctor_sahiba" target="_blank" rel="noopener">
-		<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" width="32" style="vertical-align:middle; margin-right:8px;"/>
-	</a>
-	<a href="https://www.instagram.com/the_doctor_sahiba/" target="_blank" rel="noopener">
-		<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="32" style="vertical-align:middle; margin-right:8px;"/>
-	</a>
+  <a href="https://www.youtube.com/@the_doctor_sahiba" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Channel"/>
+  </a>
+  &nbsp;
+  <a href="https://www.instagram.com/the_doctor_sahiba/" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram Profile"/>
+  </a>
 </p>
-Dr. Nidhi Singh is dedicated to women’s wellness, health, and beauty. She inspires women to heal from within as a Gynae, Homeopath, and Wellness Educator.
 
-👉 **Follow Dr. Nidhi Singh on [YouTube](https://www.youtube.com/@the_doctor_sahiba) and [Instagram](https://www.instagram.com/the_doctor_sahiba/) for more tips, inspiration, and updates!**
+<p align="center">
+  <strong>Dr. Nidhi Singh</strong> is dedicated to women’s wellness, health, and beauty.  
+  She inspires women to heal from within as a <strong>Gynecologist, Homeopath, and Wellness Educator</strong>.
+</p>
+
+---
+
+Feel free to star ⭐ the repo if you find it helpful!
+
+<p align="center">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=second-largest-problem" alt="visitor badge"/>
+</p>
 
 
