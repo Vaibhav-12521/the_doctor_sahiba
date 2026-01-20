@@ -1,25 +1,17 @@
-# Link-in-bio Profile Card
+# @the_doctor_sahiba
 
-A clean, responsive, and customizable Linktree-style profile card built with HTML, CSS, and JavaScript.
+**Dr. Nidhi Singh**
+🌸 *Gynecology | Pregnancy Care | PCOD Management | Women’s Wellness*
+Homeopathic Physician practicing **Homeopathy with Holistic Healing**
 
-## ✨ Features
+🎓 C.G.O. (Lucknow) Certified
+Dedicated to providing natural, personalized, and compassionate care for women at every stage of life.
+Focused on hormonal balance, healthy pregnancy, and overall well-being through holistic treatment.
 
-- Modern, mobile-friendly design
-- Theme toggle with multiple gradients
-- Local assets (no external image dependencies)
-- Easy to customize handle, bio, and social links
-- WhatsApp and YouTube links included by default
+🤝 DM for Collaboration / Paid Promotions
+❤️ For Appointments, tap below ⬇️
 
----
 
-## 🚀 Quick Start
-
-1. **Open `index.html` directly in your browser**
-	 - Or serve locally for best results:
-		 ```bash
-		 python -m http.server 8080
-		 # Then open http://localhost:8080
-		 ```
 
 ---
 ## Connect With Dr. Nidhi Singh
@@ -49,6 +41,7 @@ Feel free to star ⭐ the repo if you find it helpful!
 <p align="center">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=second-largest-problem" alt="visitor badge"/>
 </p>
+
 
 
 
