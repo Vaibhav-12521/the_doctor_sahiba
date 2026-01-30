@@ -12,7 +12,6 @@ Focused on hormonal balance, healthy pregnancy, and overall well-being through h
 ❤️ For Appointments, tap below ⬇️
 
 
-
 ---
 ## Connect With Dr. Nidhi Singh
 <p align="center">
@@ -41,7 +40,6 @@ Feel free to star ⭐ the repo if you find it helpful!
 <p align="center">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=second-largest-problem" alt="visitor badge"/>
 </p>
-
 
 
 
