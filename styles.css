@@ -142,10 +142,25 @@ body{
 }
 .social-link.whatsapp {
   color: #1bd741;
+  border: none;
+  cursor: pointer;
+  padding: 12px 18px;
+  background: #f3f4f6;
+}
+.social-link.whatsapp:hover {
+  opacity: 0.8;
+  background: #eef2ff;
 }
 .social-link.whatsapp svg {
   color: #1bd741;
   fill: #1bd741;
+}
+.social-link.facebook {
+  color: #1877f2;
+}
+.social-link.facebook svg {
+  color: #1877f2;
+  fill: #1877f2;
 }
 .social-link.youtube {
   color: #ea3323;
@@ -163,6 +178,86 @@ body{
 }
 .foot-link{ color:inherit; text-underline-offset:3px; }
 .foot-link:hover{ color:#111827; }
+
+/* Modal and Glass Morphism Popup Styles */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.glass-morphism-popup {
+  position: relative;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 40px 30px;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.15);
+  max-width: 340px;
+  width: 90vw;
+  text-align: center;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup-message {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.6;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.1);
+}
 
 @media (max-width:360px){
   .cover-image{ min-height:160px; }
