@@ -262,3 +262,24 @@ body{
 @media (max-width:360px){
   .cover-image{ min-height:160px; }
 }
+
+.popup-image {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.upi-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #1bd741;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.upi-button:hover {
+  background: #18a334;
+}
