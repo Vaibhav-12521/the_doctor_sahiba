@@ -1,5 +1,5 @@
 const CONFIG = {
-  email: 'thedoctorsahiba.official@gmail.com',
+  email: 'c1d1f7cab3de7d05cade7d97616e4763',
   upi: {
     pa: 'nidhi17344-1@okaxis',
     pn: 'Nidhi Singh',
