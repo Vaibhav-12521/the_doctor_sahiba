@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dr. Nidhi Singh · the_doctor_sahiba</title>
-  <meta name="description" content="Dr. Nidhi Singh – Gynae, Pregnancy, PCOD & Wellness. Homeopathy + Holistic Healing. Book an online consultation." />
+  <meta name="description" content="Dr. Nidhi Singh: Gynae, Pregnancy, PCOD & Wellness. Homeopathy + Holistic Healing. Book an online consultation." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
   <main class="page">
     <div class="cards">
 
-      <!-- ============ LEFT: Profile card ============ -->
       <article class="card profile-card" aria-label="Doctor profile">
         <div class="photo">
           <img src="assets/nidhi.png" alt="Dr. Nidhi Singh" />
@@ -39,7 +38,6 @@
         </div>
       </article>
 
-      <!-- ============ RIGHT: Details card ============ -->
       <article class="card details-card" aria-label="Consultation details">
         <header class="mini-head">
           <img class="avatar" src="assets/nidhi.png" alt="" />
@@ -112,7 +110,6 @@
     </div>
   </main>
 
-  <!-- ============ Booking modal (language → details → pay → confirm) ============ -->
   <div id="bookingModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
     <div class="modal-overlay" data-close></div>
     <div class="modal-box">
@@ -125,7 +122,6 @@
         <li class="active" data-i18n="stepDetails">Details</li><li data-i18n="stepPay">Pay</li><li data-i18n="stepConfirm">Confirm</li>
       </ol>
 
-      <!-- Step 0: Language -->
       <div id="stepLang" class="step lang-step">
         <h2 id="modalTitle">Choose your language</h2>
         <p class="step-sub">अपनी भाषा चुनें</p>
@@ -143,7 +139,6 @@
         </div>
       </div>
 
-      <!-- Step 1: Patient details -->
       <form id="stepDetails" class="step" novalidate hidden>
         <h2 data-i18n="detailsTitle">Book your appointment</h2>
         <p class="step-sub" data-i18n="detailsSub"></p>
@@ -172,17 +167,20 @@
         <button type="submit" class="btn btn-dark btn-block" id="detailsSubmit" data-i18n="continueBtn">Continue to payment</button>
       </form>
 
-      <!-- Step 2: Payment -->
       <div id="stepPay" class="step" hidden>
         <h2 data-i18n="payTitle">Pay ₹299 consultation fee</h2>
         <p class="step-sub" id="paySub"></p>
+        <div class="notice" role="note">
+          <strong data-i18n="noticeTitle">Important</strong>
+          <p data-i18n="noticeText"></p>
+        </div>
         <img src="assets/pay.jpeg" alt="Scan the QR code to pay ₹299 via UPI" class="qr" />
         <a id="upiLink" class="btn btn-rose btn-block" href="#" data-i18n="upiBtn">Pay ₹299 with UPI app</a>
+        <a class="btn btn-ig btn-block ig-link" href="https://ig.me/m/the_doctor_sahiba" target="_blank" rel="noopener" data-i18n="igBtn">Send screenshot on Instagram DM</a>
         <button type="button" class="btn btn-dark btn-block" id="paidBtn" data-i18n="paidBtn">I have paid</button>
         <button type="button" class="btn btn-link btn-block" id="editDetails" data-i18n="editBtn">← Change my details</button>
       </div>
 
-      <!-- Step 3: Confirm -->
       <form id="stepConfirm" class="step" novalidate hidden>
         <h2 data-i18n="confirmTitle">Confirm your payment</h2>
         <p class="step-sub" data-i18n="confirmSub"></p>
@@ -196,11 +194,15 @@
         <button type="button" class="btn btn-link" id="backToPay" data-i18n="backBtn">← Back to payment</button>
       </form>
 
-      <!-- Done -->
       <div id="stepDone" class="step done" hidden>
         <div class="done-icon" aria-hidden="true">✓</div>
         <h2 id="doneTitle"></h2>
         <p class="step-sub" id="doneSub"></p>
+        <div class="notice" role="note">
+          <strong data-i18n="noticeTitle">Important</strong>
+          <p data-i18n="noticeText"></p>
+        </div>
+        <a class="btn btn-ig btn-block ig-link" href="https://ig.me/m/the_doctor_sahiba" target="_blank" rel="noopener" data-i18n="igBtn">Send screenshot on Instagram DM</a>
         <button type="button" class="btn btn-dark btn-block" data-close data-i18n="doneBtn">Done</button>
       </div>
     </div>

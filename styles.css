@@ -34,7 +34,6 @@ button{ font:inherit; }
   padding:20px 16px 32px;
 }
 
-/* ---------- Layout ---------- */
 .cards{
   width:100%;
   max-width:420px;
@@ -60,7 +59,6 @@ button{ font:inherit; }
   flex-direction:column;
 }
 
-/* ---------- Profile card ---------- */
 .photo{
   position:relative;
   border-radius:16px;
@@ -72,7 +70,7 @@ button{ font:inherit; }
   width:100%; height:100%;
   object-fit:cover; object-position: center 12%;
   display:block;
-  mix-blend-mode:multiply; /* removes the white photo background */
+  mix-blend-mode:multiply;
 }
 .chip{
   position:absolute; top:10px; right:10px;
@@ -86,19 +84,19 @@ button{ font:inherit; }
 }
 .profile-body{
   padding:16px 6px 4px;
+  text-align:center;
   display:flex; flex-direction:column; flex:1;
 }
 .name{
   margin:0;
   font-size:26px; font-weight:700; letter-spacing:-.02em;
-  display:flex; align-items:center; gap:8px;
+  display:flex; align-items:center; justify-content:center; gap:8px;
 }
 .verified{ color:var(--green); flex-shrink:0; }
 .handle{ margin:2px 0 0; color:var(--rose-deep); font-size:13.5px; font-weight:500; }
 .bio{ margin:12px 0 18px; color:var(--muted); font-size:14.5px; line-height:1.55; }
 .profile-body .btn{ margin-top:auto; }
 
-/* ---------- Buttons ---------- */
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   height:48px; padding:0 20px;
@@ -120,7 +118,6 @@ button{ font:inherit; }
 .btn-link{ background:none; color:var(--muted); height:auto; padding:10px; font-size:14px; }
 .btn-link:hover{ color:var(--text); }
 
-/* ---------- Details card ---------- */
 .details-card{ padding:18px; }
 .mini-head{ display:flex; align-items:center; gap:12px; }
 .avatar{
@@ -198,7 +195,6 @@ button{ font:inherit; }
   color:var(--gold);
 }
 
-/* ---------- Modal ---------- */
 .modal{
   position:fixed; inset:0; z-index:1000;
   display:flex; align-items:center; justify-content:center;
@@ -283,7 +279,7 @@ button{ font:inherit; }
 .field input{
   width:100%; height:46px; padding:0 14px;
   border:1px solid #e3dadd; border-radius:12px;
-  font:inherit; font-size:16px; /* 16px prevents iOS zoom */
+  font:inherit; font-size:16px;
   color:var(--text); background:#fff;
   transition: border-color .15s, box-shadow .15s;
 }
@@ -305,3 +301,16 @@ button{ font:inherit; }
   display:grid; place-items:center;
   background:#e8f6ee; color:var(--green); font-size:30px; font-weight:700;
 }
+
+.notice{
+  margin:0 0 14px; padding:12px 14px;
+  background:#fff6e6; border:1px solid #f1d39a; border-left:4px solid var(--gold);
+  border-radius:12px; text-align:left;
+}
+.notice strong{ display:block; font-size:13px; color:#8a6214; margin-bottom:4px; }
+.notice p{ margin:0; font-size:13px; line-height:1.5; color:#5c4a2a; }
+.btn-ig{
+  background:linear-gradient(90deg, #f58529, #dd2a7b 50%, #8134af);
+  color:#fff;
+}
+.btn-ig:hover{ opacity:.92; }
