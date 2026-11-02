@@ -428,23 +428,3 @@ steps.confirm.addEventListener('submit', async e => {
   applyLang();
   if (booking) { preparePayStep(); openModal('pay'); }
 })();
-
-const fab = $('#connectFab');
-const fabToggle = $('#fabToggle');
-function setFab(open) {
-  fab.classList.toggle('open', open);
-  fabToggle.setAttribute('aria-expanded', open);
-  fabToggle.setAttribute('aria-label', open ? 'Close' : 'Connect with us');
-  $$('.fab-item', fab).forEach(a => { a.tabIndex = open ? 0 : -1; });
-}
-setFab(false);
-fabToggle.addEventListener('click', e => {
-  e.stopPropagation();
-  setFab(!fab.classList.contains('open'));
-});
-document.addEventListener('click', e => {
-  if (fab.classList.contains('open') && !fab.contains(e.target)) setFab(false);
-});
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && fab.classList.contains('open')) { setFab(false); fabToggle.focus(); }
-});
