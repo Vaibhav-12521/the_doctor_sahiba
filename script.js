@@ -25,10 +25,10 @@ const I18N = {
     switchTo: 'हिन्दी',
     stepDetails: 'Details', stepPay: 'Pay', stepConfirm: 'Confirm',
     detailsTitle: 'Book your appointment',
-    detailsSub: 'Share <b>any two</b> of the details below so we can confirm your slot.',
+    detailsSub: 'Share your <b>name and phone number</b> so we can confirm your slot. Email is optional.',
     nameLabel: 'Full name', namePh: 'e.g. Priya Sharma',
     phoneLabel: 'Phone / WhatsApp', phonePh: '10-digit mobile number',
-    emailLabel: 'Email',
+    emailLabel: 'Email <em>(optional)</em>',
     concernLabel: 'Concern <em>(optional)</em>', concernPh: 'PCOD, pregnancy, periods…',
     continueBtn: 'Continue to payment <span aria-hidden="true">→</span>',
     saving: 'Saving…',
@@ -36,7 +36,8 @@ const I18N = {
     errPhone: 'Enter a valid 10-digit mobile number',
     errEmail: 'Enter a valid email address',
     fixFields: 'Please fix the highlighted field(s).',
-    needTwo: 'Please fill at least two: name, phone or email.',
+    reqName: 'Please enter your name',
+    reqPhone: 'Please enter your mobile number',
     payTitle: 'Pay ₹299 consultation fee',
     paySub: 'Booking ID <b>{id}</b> — keep this for reference.',
     upiBtn: 'Pay ₹299 with UPI app',
@@ -58,10 +59,10 @@ const I18N = {
     switchTo: 'English',
     stepDetails: 'विवरण', stepPay: 'भुगतान', stepConfirm: 'पुष्टि',
     detailsTitle: 'अपॉइंटमेंट बुक करें',
-    detailsSub: 'नीचे दी गई जानकारी में से <b>कोई दो</b> भरें, ताकि हम आपका अपॉइंटमेंट कन्फर्म कर सकें।',
+    detailsSub: 'अपना <b>नाम और फ़ोन नंबर</b> भरें, ताकि हम आपका अपॉइंटमेंट कन्फर्म कर सकें। ईमेल वैकल्पिक है।',
     nameLabel: 'पूरा नाम', namePh: 'जैसे: प्रिया शर्मा',
     phoneLabel: 'फ़ोन / व्हाट्सऐप', phonePh: '10 अंकों का मोबाइल नंबर',
-    emailLabel: 'ईमेल',
+    emailLabel: 'ईमेल <em>(वैकल्पिक)</em>',
     concernLabel: 'समस्या <em>(वैकल्पिक)</em>', concernPh: 'PCOD, प्रेगनेंसी, पीरियड्स…',
     continueBtn: 'भुगतान के लिए आगे बढ़ें <span aria-hidden="true">→</span>',
     saving: 'सेव हो रहा है…',
@@ -69,7 +70,8 @@ const I18N = {
     errPhone: 'सही 10 अंकों का मोबाइल नंबर लिखें',
     errEmail: 'सही ईमेल पता लिखें',
     fixFields: 'कृपया लाल निशान वाली जानकारी ठीक करें।',
-    needTwo: 'कृपया कम से कम दो भरें: नाम, फ़ोन या ईमेल।',
+    reqName: 'कृपया अपना नाम लिखें',
+    reqPhone: 'कृपया अपना मोबाइल नंबर लिखें',
     payTitle: '₹299 कंसल्टेशन फीस भरें',
     paySub: 'बुकिंग ID <b>{id}</b> — इसे संभाल कर रखें।',
     upiBtn: 'UPI ऐप से ₹299 भरें',
@@ -147,19 +149,21 @@ const validators = {
   }
 };
 
+// Name + phone are required; email is optional but must be valid if filled.
+const REQUIRED = { name: 'reqName', phone: 'reqPhone' };
 function checkDetails(form) {
-  let validCount = 0, hasError = false;
+  let hasError = false;
   for (const key of ['name', 'phone', 'email']) {
     const input = form.elements[key];
     const field = input.closest('.field');
-    const res = validators[key](input.value.trim());
+    let res = validators[key](input.value.trim());
+    if (res === null && REQUIRED[key]) res = t(REQUIRED[key]);
     field.classList.toggle('valid', res === true);
     field.classList.toggle('invalid', typeof res === 'string');
     $('.err', field).textContent = typeof res === 'string' ? res : '';
-    if (res === true) validCount++;
     if (typeof res === 'string') hasError = true;
   }
-  return { validCount, hasError };
+  return { hasError };
 }
 
 /* ---------- Email sending (FormSubmit AJAX) ---------- */
@@ -317,10 +321,9 @@ steps.details.addEventListener('submit', async e => {
   e.preventDefault();
   const form = steps.details;
   const msg = $('#detailsMsg');
-  const { validCount, hasError } = checkDetails(form);
+  const { hasError } = checkDetails(form);
 
   if (hasError) { msg.textContent = t('fixFields'); return; }
-  if (validCount < 2) { msg.textContent = t('needTwo'); return; }
 
   booking = {
     id: makeId(),

@@ -150,16 +150,16 @@
 
         <label class="field">
           <span data-i18n="nameLabel">Full name</span>
-          <input type="text" name="name" autocomplete="name" data-i18n-ph="namePh" />
+          <input type="text" name="name" required autocomplete="name" data-i18n-ph="namePh" />
           <small class="err"></small>
         </label>
         <label class="field">
           <span data-i18n="phoneLabel">Phone / WhatsApp</span>
-          <input type="tel" name="phone" autocomplete="tel" inputmode="tel" data-i18n-ph="phonePh" />
+          <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" data-i18n-ph="phonePh" />
           <small class="err"></small>
         </label>
         <label class="field">
-          <span data-i18n="emailLabel">Email</span>
+          <span data-i18n="emailLabel">Email <em>(optional)</em></span>
           <input type="email" name="email" autocomplete="email" placeholder="you@example.com" />
           <small class="err"></small>
         </label>
