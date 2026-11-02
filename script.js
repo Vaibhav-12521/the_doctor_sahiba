@@ -167,15 +167,27 @@ function checkDetails(form) {
 }
 
 /* ---------- Email sending (FormSubmit AJAX) ---------- */
-async function sendToInbox(data) {
-  const res = await fetch(`https://formsubmit.co/ajax/${CONFIG.email}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify({ _template: 'table', _captcha: 'false', ...data })
-  });
-  const json = await res.json().catch(() => ({}));
-  if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || 'Send failed');
-  return json;
+// Form-encoded body = "simple" CORS request: no preflight round trip (faster).
+// keepalive lets the request finish even if the patient switches to their UPI app.
+// The timeout stops the UI from ever waiting forever on a slow server.
+async function sendToInbox(data, timeoutMs = 12000) {
+  const body = new URLSearchParams({ _template: 'table', _captcha: 'false', ...data });
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+  try {
+    const res = await fetch(`https://formsubmit.co/ajax/${CONFIG.email}`, {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body,
+      keepalive: true,
+      signal: ctrl.signal
+    });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || 'Send failed');
+    return json;
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 function contactLine(b) {
@@ -336,21 +348,21 @@ steps.details.addEventListener('submit', async e => {
     detailsSent: false
   };
 
-  const btn = $('#detailsSubmit');
-  btn.disabled = true; btn.textContent = t('saving');
-  try {
-    await sendToInbox(emailPayload(booking, 'New booking – payment pending'));
-    booking.detailsSent = true;
-  } catch (err) {
-    // Don't block the patient; details are re-sent with the confirmation step.
-    console.warn('Details email failed, will retry on confirm:', err);
-  } finally {
-    btn.disabled = false; btn.innerHTML = t('continueBtn');
-  }
-
+  // Move to payment instantly; email goes out in the background.
   store.set(booking);
   preparePayStep();
   showStep('pay');
+
+  const sent = booking;
+  sendToInbox(emailPayload(sent, 'New booking – payment pending'))
+    .then(() => {
+      sent.detailsSent = true;
+      if (booking && booking.id === sent.id) store.set(booking);
+    })
+    .catch(err => {
+      // Details are re-sent with the confirmation step, so nothing is lost.
+      console.warn('Details email failed, will retry on confirm:', err);
+    });
 });
 
 /* Step 2: pay */
