@@ -354,3 +354,41 @@ button{ font:inherit; }
   .photo-socials{ left:8px; gap:10px; }
   .float-icon{ width:36px; height:36px; }
 }
+
+/* ---------- Razorpay checkout block ---------- */
+.summary{
+  background:linear-gradient(135deg, #fbecef 0%, #fdf5ea 100%);
+  border-radius:14px; padding:14px 16px; margin:0 0 14px;
+}
+.summary-row{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; font-size:14.5px; }
+.summary-row strong{ font-size:22px; letter-spacing:-.02em; }
+.methods{ margin:4px 0 0; font-size:12.5px; color:var(--rose-deep); }
+.powered{
+  margin:10px 0 0; display:flex; align-items:center; justify-content:center; gap:6px;
+  font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--gold);
+}
+#payMsg b{ font-weight:700; }
+.rzp-block[hidden]{ display:none; }
+
+/* ---------- Manual UPI fallback ---------- */
+.manual{
+  margin-top:16px; border:1px solid var(--line); border-radius:14px; background:#fff;
+}
+.manual > summary{
+  list-style:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:13px 16px; font-size:14px; font-weight:500; color:var(--muted);
+  border-radius:14px;
+}
+.manual > summary::-webkit-details-marker{ display:none; }
+.manual > summary::after{ content:"+"; font-size:18px; line-height:1; color:var(--rose-deep); }
+.manual[open] > summary::after{ content:"−"; }
+.manual > summary:hover{ color:var(--text); }
+.manual > summary:focus-visible{ outline:3px solid rgba(201,107,127,.45); outline-offset:2px; }
+.manual-body{ padding:0 14px 14px; }
+.manual-body .btn + .btn{ margin-top:10px; }
+.manual.only{ border:0; margin-top:0; }
+.manual.only > summary{ display:none; }
+.manual.only .manual-body{ padding:0; }
+.manual-only[hidden]{ display:none; }
+#editDetails{ margin-top:8px; }

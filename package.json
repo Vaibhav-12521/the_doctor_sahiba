@@ -1,0 +1,13 @@
+{
+  "name": "the-doctor-sahiba",
+  "private": true,
+  "type": "module",
+  "description": "Booking page for Dr. Nidhi Singh with Razorpay checkout",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "local": "node --env-file=.env dev-server.mjs"
+  }
+}
