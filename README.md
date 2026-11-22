@@ -27,7 +27,7 @@ Focused on hormonal balance, healthy pregnancy, and overall well-being through h
 
 <p align="center">
   <strong>Dr. Nidhi Singh</strong> is dedicated to women’s wellness, health, and beauty.  
-  She inspires women to heal from within as a <strong>Gynecologist, Homeopath, and Wellness Educator</strong>.
+  She inspires women to heal from within as a <strong>Gynecologist, Homeopath, and Wellness Educator</strong>. 
 </p>
 
 <p align="center">
