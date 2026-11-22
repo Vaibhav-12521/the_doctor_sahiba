@@ -9,7 +9,7 @@ Dedicated to providing natural, personalized, and compassionate care for women a
 Focused on hormonal balance, healthy pregnancy, and overall well-being through holistic treatment.
 
 🤝 DM for Collaboration / Paid Promotions
-❤️ For Appointments, tap below ⬇️
+❤️ For Appointments, tap below ⬇️ 
 
 
 
